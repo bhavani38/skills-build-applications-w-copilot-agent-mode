@@ -3,6 +3,11 @@
 import os
 import sys
 
+# Create the Django project structure
+# Command: django-admin startproject octofit_tracker .
+
+# Run the Django development server
+# Command: python manage.py runserver
 
 def main():
     """Run administrative tasks."""
