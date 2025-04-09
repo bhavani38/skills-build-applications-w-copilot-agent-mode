@@ -137,3 +137,5 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
     ]
 }
+
+CODESPACE_API_SUFFIX = 'https://skills-build-applications-w-copilot-agent-mode-8000.app.github.dev/api/'
