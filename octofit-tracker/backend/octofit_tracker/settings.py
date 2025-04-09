@@ -44,6 +44,13 @@ INSTALLED_APPS = [
     'rest_framework',
 ]
 
+INSTALLED_APPS += [
+    'corsheaders',
+]
+
+# Remove duplicate 'corsheaders' entry
+INSTALLED_APPS = list(dict.fromkeys(INSTALLED_APPS))
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -54,6 +61,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'corsheaders.middleware.CorsMiddleware',
 ]
+
+MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
 
 ROOT_URLCONF = "octofit_tracker.urls"
 
@@ -139,3 +148,8 @@ REST_FRAMEWORK = {
 }
 
 CODESPACE_API_SUFFIX = 'https://skills-build-applications-w-copilot-agent-mode-8000.app.github.dev/api/'
+
+CORS_ALLOWED_ORIGINS = [
+    'https://fluffy-space-orbit-65wxpvq6gwgcrqx9-3000.app.github.dev',
+    'https://skills-build-applications-w-copilot-agent-mode-8000.app.github.dev',
+]
